@@ -66,6 +66,7 @@ if __name__ == "__main__":
     english_bigrams, english_char_counts = language(path + 'English')
     french_bigrams, french_char_counts = language(path + 'French')
     italian_bigrams, italian_char_counts = language(path + 'Italian')
+    german_bigrams, german_char_count = language(path + 'German')
 
     #P_th_english = float(english_bigrams['th']) / english_char_counts['t']
     i = 1
@@ -74,6 +75,9 @@ if __name__ == "__main__":
         pEnglish = probability(english_bigrams, english_char_counts, bigrams)
         pFrench = probability(french_bigrams, french_char_counts, bigrams)
         pItalian = probability(italian_bigrams, italian_char_counts, bigrams)
+        pGerman = probability(german_bigrams, german_char_count, bigrams)
+
+        
 
         if (pEnglish > pFrench) and (pEnglish > pItalian):
             print str(i) + " English"
